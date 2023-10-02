@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <audio id="audio" src=""></audio>
+
+    <div class="menu-continer">
+        <div class="menu">
+            <div>
+                <h2>wellcome</h2>
+                <h1>☺</h1>
+            </div>
+            <span id="start-btn">start</span>
+        </div>
+    </div>
+    <div class="continer">
+        <div class="top">
+            <span id="score"><span id="x-score">0</span> - <span id="o-score">0</span></span>
+            <span id="game-timer">00:00</span>
+            <span id="menu-btn">menu</span>
+        </div>
+        <div class="game">
+            <div id="a1" onclick="selectedSection('a1')"></div>
+            <div id="b1" class="top-sec" onclick="selectedSection('b1')"></div>
+            <div id="c1" onclick="selectedSection('c1')"></div>
+            <div id="a2" class="left-sec" onclick="selectedSection('a2')"></div>
+            <div id="b2" class="center-sec" onclick="selectedSection('b2')"></div>
+            <div id="c2" class="right-sec" onclick="selectedSection('c2')"></div>
+            <div id="a3" onclick="selectedSection('a3')"></div>
+            <div id="b3" class="bottom-sec" onclick="selectedSection('b3')"></div>
+            <div id="c3" onclick="selectedSection('c3')"></div>
+        </div>
+        <div class="turn-box">
+            <span>turn time: <span id="turn-time">00:00</span></span>
+            <span>turn: <span id="turn"></span></span>
+        </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>
