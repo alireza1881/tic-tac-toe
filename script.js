@@ -26,7 +26,6 @@ let minute = "00"
 let second = 0
 let gameTimer
 let turnTimer
-// let xTurn = true
 let turn = ["X", "O"]
 let turnIndex = 0
 let minuteTurn = "00"
@@ -35,7 +34,6 @@ let i = 0
 let winner = ""
 let xScore = 0
 let oScore = 0
-let currentTimeVal = 0
 let number = 0
 let musics = [
     "./music/35 Staff Roll.mp3",
@@ -79,9 +77,6 @@ const gameTimerFunc = () => {
     gametimerElem.innerHTML = minute + ":" + second
 }
 const menuFunc = () =>{
-    currentTimeVal = audio.currentTime
-    currentMusic = musics[number]
-    // audio.setAttribute("src", "./music/18 File select.mp3")
     audio.pause()
     menuContiner.style.display = "flex"
     menuContiner.firstElementChild.innerHTML = `
@@ -96,12 +91,9 @@ const menuFunc = () =>{
     gametimerElem.innerHTML = minute+":"+second
     const resume = $.querySelector("#resume")
     resume.addEventListener("click", function () {
-        // startGame()
         menuContiner.style.display = "none"
         gameTimer = setInterval(gameTimerFunc, 1000)
         turnTimer = setInterval(turnTimerfunc,1000)    
-        audio.setAttribute("src", currentMusic)
-        audio.currentTime = currentTimeVal
         audio.play()
     })
     restart.addEventListener("click", restartBtnFunc)
@@ -109,7 +101,6 @@ const menuFunc = () =>{
 
 
 const restartBtnFunc = () =>{
-        currentTimeVal = 0
         i = 0
         minute = "00"
         second = "00"
@@ -193,7 +184,6 @@ const checkWiner = () =>{
     const resultGame = winner =>{
         if(winner == "equal :)"){
             audio.setAttribute("src", "./music/16 - Final Boss (Part 1 Intro).mp3")
-            audio.currentTime = 3.6
         }else{
             audio.setAttribute("src", "./music/31 Koopa Clear.mp3")
         }
